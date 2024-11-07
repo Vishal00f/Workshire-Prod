@@ -6,6 +6,7 @@ import Header from '@/components/Header'
 import { DataGrid, GridColDef, GridToolbarContainer, GridToolbarExport, GridToolbarFilterButton } from '@mui/x-data-grid'
 import Image from 'next/image'
 import { dataGridClassNames, dataGridSxStyles } from '@/lib/utils'
+import Loader from '@/components/Loader'
 const CustomToolbar = ()=>(
     <GridToolbarContainer className='toolbar flex gap-2'>
         <GridToolbarFilterButton/>
@@ -42,7 +43,7 @@ const Users = () => {
     const {data:users,isLoading,isError}=useGetUsersQuery()
     const {isDarkMode} = useAppSelector((state)=>state.global)
 
-    if(isLoading) return <div>Loading...</div>
+    if(isLoading) return <Loader/>
     if(isError) return <div>Error fetching users</div>
   return (
     <div className='flex w-full flex-col p-8' >

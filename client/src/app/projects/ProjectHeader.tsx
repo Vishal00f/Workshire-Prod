@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { Clock, Filter, Grid, Grid3x3, List, PlusSquare, Share2, Table } from "lucide-react";
+import { Clock, Filter, Grid3x3, List, PlusSquare, Share2, Table } from "lucide-react";
 import ModalNewProject from "./ModalNewProject"
 import React, { useState } from "react";
 
@@ -52,6 +52,7 @@ const ProjectHeader = ({ activeTab, setActiveTab }: Props) => {
         <div className="flex flex-1 items-center gap-2 md:gap-4">
           {TabItemsData.map((tab)=>(
             <TabButton
+            key={tab.name}
             name={tab.name}
             icon={tab.icon}
             activeTab={activeTab}

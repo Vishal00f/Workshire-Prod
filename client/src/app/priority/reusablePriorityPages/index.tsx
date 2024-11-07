@@ -6,7 +6,6 @@ import TaskCard from '@/components/TaskCard'
 import { dataGridClassNames, dataGridSxStyles } from '@/lib/utils'
 import { Priority, Task, useGetTaskByUserQuery } from '@/state/api'
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
-import { List } from 'lucide-react'
 import React, { useState } from 'react'
 
 type Props = {

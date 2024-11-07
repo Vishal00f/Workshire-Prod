@@ -1,5 +1,6 @@
 "use client"
 import Header from '@/components/Header'
+import Loader from '@/components/Loader'
 import ProjectCard from '@/components/ProjectCard'
 import TaskCard from '@/components/TaskCard'
 import UserCard from '@/components/UserCard'
@@ -31,7 +32,7 @@ const Search = () => {
             <input type="text" placeholder='Search...' className='w-1/2 rounded border p-3 shadow' onChange={handleSearch} />
         </div>
         <div className="p-5">
-            {isLoading && <p>Loading...</p>}
+            {isLoading && <Loader/>}
             {isError && <p>Error occured while fetching Search results</p>}
             {!isLoading && !isError && searchResults && (
                 <div>

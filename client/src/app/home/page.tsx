@@ -24,6 +24,7 @@ import {
   YAxis,
 } from "recharts";
 import { dataGridClassNames, dataGridSxStyles } from "@/lib/utils";
+import Loader from "@/components/Loader";
 
 const HomePage = () => {
   const {
@@ -38,7 +39,7 @@ const HomePage = () => {
   } = useGetProjectsQuery();
 
   const { isDarkMode } = useAppSelector((state) => state.global);
-  if (isTasksLoading || isProjectsLoading) return <div>Loading...</div>;
+  if (isTasksLoading || isProjectsLoading) return <Loader/>;
   if (tasksError || projectsError || !tasks || !projects)
     return <div>Error fetching data</div>;
 

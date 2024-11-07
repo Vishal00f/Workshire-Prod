@@ -5,6 +5,7 @@ import React, { useMemo, useState } from 'react'
 import {DisplayOption, Gantt, ViewMode} from "gantt-task-react"
 import "gantt-task-react/dist/index.css"
 import Header from '@/components/Header';
+import Loader from '@/components/Loader';
 
 type TaskTypeItems = "task" | "milestone" | "project";
 const Timeline = () => {
@@ -36,7 +37,7 @@ const Timeline = () => {
         viewMode:event.target.value as ViewMode
       }))
     }
-    if(isLoading) return <div>Loading ...</div>
+    if(isLoading) return <Loader/>
     if(isError || !projects) return <div>Error while fetching projects</div>
     return (
     <div className='max-w-full p-8'>
