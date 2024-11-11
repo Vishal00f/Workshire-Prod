@@ -1,14 +1,19 @@
+"use client"
 import Header from '@/components/Header'
+import { useGetAuthUserQuery } from '@/state/api'
 import React from 'react'
 
 
 const Settings = () => {
+    const {data:user} = useGetAuthUserQuery({});
+    
     const userSettings = {
-        username:"Vishal Khandelwal",
-        email:"vishal123@gmail.com",
+        username:user?.user.signInDetails?.loginId,
+        email:"xxxx",
         teamName:"Development team",
         roleName:"Developer"
     }
+    
     const labelStyles = "block text-sm font-medium dark:text-white"
     const textStyles = "mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 dark:text-white";
 
